@@ -17,7 +17,7 @@ public class Principal {
 		Modificador descuento1 = new ProductDiscount("Samsung", 0.05F, producto1);
 		Modificador descuento2 = new ProductDiscount("Noblex", 0.03F, producto2);
 		
-		Modificador descuento3 = new BillDiscount("Black Friday", 0.2F);
+		Modificador descuento3 = new BillDiscount("Black Friday", 0.2F, 10000F,factura);
 		
 		factura.getListaProducto().add(producto1);
 		factura.getListaProducto().add(producto2);

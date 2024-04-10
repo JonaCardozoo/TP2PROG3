@@ -6,16 +6,18 @@ public class ItemProducto {
 	private int cantidad;
 
 	public ItemProducto(String nombre, float precio, float impuesto, int cantidad) {
+
 		this.nombre = nombre;
 		this.precio = precio;
 		this.impuesto = impuesto;
 		this.cantidad = cantidad;
+
 	}
 
 	public float CalcularTotal() {
 
 		float montoTotal = precio * cantidad;
-		float montoImpuesto = (montoTotal * impuesto);		 
+		float montoImpuesto = (montoTotal * impuesto);
 		float montoTotalFinal = montoTotal + montoImpuesto;
 
 		return montoTotalFinal;
@@ -52,10 +54,10 @@ public class ItemProducto {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-    
+
 	@Override
 	public String toString() {
-		return "ItemProducto [Nombre=" + this.nombre + ", Precio=" + this.precio + ", Impuesto=" + this.impuesto + ", Cantidad="
-				+ this.cantidad + "]"; 
+		return "ItemProducto [Nombre=" + this.nombre + ", Precio=" + this.precio + ", Impuesto=" + this.impuesto
+				+ ", Cantidad=" + this.cantidad + "]";
 	}
 }

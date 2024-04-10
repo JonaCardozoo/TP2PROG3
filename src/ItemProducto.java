@@ -21,7 +21,12 @@ public class ItemProducto {
 	}
 	
 	public float CalcularTotal() {
-		   return (Precio * Cantidad) + (Precio * Cantidad * Impuesto);
+		
+		float montoTotal = Precio * Cantidad;
+		float montoImpuesto = (Precio * Impuesto)/100;	
+		float montoTotalFinal = (montoTotal  + montoImpuesto);
+		
+		   return montoTotalFinal;
 	}
 	
 	public String getNombre() {

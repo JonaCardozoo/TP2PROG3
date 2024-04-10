@@ -1,67 +1,61 @@
 
 public class ItemProducto {
-	private String Nombre;
-	@Override
-	public String toString() {
-		return "ItemProducto [Nombre=" + Nombre + ", Precio=" + Precio + ", Impuesto=" + Impuesto + ", Cantidad="
-				+ Cantidad + "]";
-	}
-	
-	private float Precio;
-	private float Impuesto;
-	private int Cantidad;
-	
-	
+	private String nombre;
+	private float precio;
+	private float impuesto;
+	private int cantidad;
+
 	public ItemProducto(String nombre, float precio, float impuesto, int cantidad) {
-		Nombre = nombre;
-		Precio = precio;
-		Impuesto = impuesto;
-		Cantidad = cantidad;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.impuesto = impuesto;
+		this.cantidad = cantidad;
 	}
-	
+
 	public float CalcularTotal() {
-		
-		float montoTotal = Precio * Cantidad;
-		float montoImpuesto = (Precio * Impuesto)/100;	
-		float montoTotalFinal = (montoTotal  + montoImpuesto);
-		
-		   return montoTotalFinal;
+
+		float montoTotal = precio * cantidad;
+		float montoImpuesto = (montoTotal * impuesto);		 
+		float montoTotalFinal = montoTotal + montoImpuesto;
+
+		return montoTotalFinal;
 	}
-	
+
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public float getPrecio() {
-		return Precio;
+		return precio;
 	}
 
 	public void setPrecio(float precio) {
-		Precio = precio;
+		this.precio = precio;
 	}
 
 	public float getImpuesto() {
-		return Impuesto;
+		return impuesto;
 	}
 
 	public void setImpuesto(float impuesto) {
-		Impuesto = impuesto;
+		this.impuesto = impuesto;
 	}
 
 	public int getCantidad() {
-		return Cantidad;
+		return cantidad;
 	}
 
 	public void setCantidad(int cantidad) {
-		Cantidad = cantidad;
+		this.cantidad = cantidad;
 	}
-	
-	
-	
-	
-	
+    
+	@Override
+	public String toString() {
+		return "ItemProducto [Nombre=" + this.nombre + ", Precio=" + this.precio + ", Impuesto=" + this.impuesto + ", Cantidad="
+				+ this.cantidad + "]"; 
+	}
 }

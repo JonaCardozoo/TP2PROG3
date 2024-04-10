@@ -4,7 +4,7 @@ public class ProductDiscount extends Modificador {
 
 	public ProductDiscount(String nombreDescuento, float porcentaje, ItemProducto producto) {
 		super(nombreDescuento, porcentaje);
-		refProducto = producto;
+		this.refProducto = producto; 
 	}
 	
 	public ItemProducto getRefProducto() {
@@ -15,10 +15,12 @@ public class ProductDiscount extends Modificador {
 		this.refProducto = refProducto;
 	}
 	
-	@Override
-	public double applayProductDiscount() {
-		return refProducto.CalcularTotal() * (porcentaje/100);
-	}
+	 @Override
+	    public double applayProductDiscount() {
+	        double descuento = refProducto.getPrecio() * (getPorcentaje() / 100);
+	        System.out.println("Descuento aplicado por " + getNombreDescuento() + ": " + descuento);
+	        return descuento;
+	    }
 	@Override
 	public double applayBillDiscount() {
 		return 0;

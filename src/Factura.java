@@ -8,21 +8,20 @@ public class Factura<T> {
 	
 	public Factura() {
 		listaModificadores = new ArrayList<>();
-		ListaProducto = new ArrayList<ItemProducto>();
+		ListaProducto = new ArrayList<>();
 	}
 	
-	public List<T> getListaModificadores(){
-		return listaModificadores;
-	}
-	
-	public double getMontoTotal() {
-		return montoTotal;
+	public double getMontoTotal() { 
+		return montoTotal; 
 	}
 	
 	public void setMontoTotal(double montoTotal) {
 		this.montoTotal = montoTotal;
 	}
 	
+	public List<T> getListaModificadores(){
+		return listaModificadores;
+	}
 	public List<ItemProducto> getListaProducto(){
 		return ListaProducto;
 	}

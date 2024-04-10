@@ -1,41 +1,39 @@
 
 public class Calculador<M extends Modificador> {
 
-	public double calcularMontoFinal(Factura<M> factura) {
-		factura = this.calcularTotal(factura);
-		factura = this.calcularDescuentoTotalPorFactura(factura);
-		factura = this.calcularDescuentoTotalPorProductos(factura);
+	public double calcularMontoTotal(Factura<M> factura) {
+		factura = calcularTotalFactura(factura);
+		factura = calcularDescuentoTotalPorProductos(factura);
+		factura = calcularDescuentoTotalPorFactura(factura);
+		
 		return factura.getMontoTotal();
 	}
-	
-	public Factura<M> calcularTotal(Factura<M> fac) {
-		float Total = 0.0F;
-		for (ItemProducto item : fac.getListaProducto()) {
-			Total += item.CalcularTotal();
-		}
-		
-		fac.setMontoTotal(Total);
+
+	public Factura<M> calcularTotalFactura(Factura<M> fac) {
+		float total = 0.00f;		
+		for (ItemProducto item : fac.getListaProducto()) {					
+			total += item.CalcularTotal();
+		}		
+		fac.setMontoTotal(total);		
 		return fac;
 	}
 
 	public Factura<M> calcularDescuentoTotalPorProductos(Factura<M> fac) {
-		float Total = 0.0F;
-		for(M factura: fac.getListaModificadores()) {
-			Total+= factura.applayProductDiscount();
-		}
-		
-		fac.setMontoTotal(fac.getMontoTotal() - Total);
-		return fac;
-		
-	}
+        float totalDescuento = 0;
+        for (M modificador : fac.getListaModificadores()) {
+            totalDescuento += modificador.applayProductDiscount();
+        }
+        fac.setMontoTotal(fac.getMontoTotal() - totalDescuento);
+        return fac;
+    }
 
-	public Factura<M> calcularDescuentoTotalPorFactura(Factura<M> fac) {
-		float Total = 0.0F;
-		for(M factura: fac.getListaModificadores()) {
-			Total+= factura.applayBillDiscount();
-		}
-		fac.setMontoTotal(fac.getMontoTotal() - Total);
-		return fac;
-	}
+    public Factura<M> calcularDescuentoTotalPorFactura(Factura<M> fac) {
+        float totalDescuento = 0;
+        for (M modificador : fac.getListaModificadores()) {
+            totalDescuento += modificador.applayBillDiscount();
+        }
+        fac.setMontoTotal(fac.getMontoTotal() - totalDescuento);
+        return fac;
+    }
 
 }

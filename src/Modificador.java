@@ -23,9 +23,9 @@ abstract class Modificador {
 
 	public void setPorcentaje(float porcentaje) {
 		this.porcentaje = porcentaje;
-	}
+	} 
 	
-	public abstract double applayProductDiscount();
+	public abstract double applayProductDiscount(); 
 	public abstract double applayBillDiscount();
 		
 	

@@ -7,6 +7,7 @@ public class BillDiscount extends Modificador {
 	public BillDiscount(String nombreDescuento, float porcentaje, float montoFijo, Factura<Modificador> factura) {
 		super(nombreDescuento, porcentaje);
 		this.montoFijo = montoFijo;
+		this.factura = factura;
 
 	}
 

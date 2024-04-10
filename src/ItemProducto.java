@@ -17,6 +17,7 @@ public class ItemProducto {
 		Precio = precio;
 		Impuesto = impuesto;
 		Cantidad = cantidad;
+		
 	}
 	
 	public float CalcularTotal() {

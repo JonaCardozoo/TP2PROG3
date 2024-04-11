@@ -13,13 +13,12 @@ public class ItemProducto {
 		this.cantidad = cantidad;
 
 	}
-
+	
 	public float CalcularTotal() {
 
 		float montoTotal = precio * cantidad;
 		float montoImpuesto = (montoTotal * impuesto);
 		float montoTotalFinal = montoTotal + montoImpuesto;
-
 		return montoTotalFinal;
 	}
 

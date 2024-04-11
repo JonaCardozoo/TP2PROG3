@@ -12,7 +12,7 @@ abstract class Modificador {
 	public String getNombreDescuento() {
 		return nombreDescuento;
 	}
-
+	
 	public void setNombreDescuento(String nombreDescuento) {
 		this.nombreDescuento = nombreDescuento;
 	}

@@ -8,7 +8,7 @@ public class Calculador<M extends Modificador> {
 		
 		return factura.getMontoTotal();
 	}
-
+	
 	public Factura<M> calcularTotalFactura(Factura<M> fac) {
 		float total = 0.00f;		
 		for (ItemProducto item : fac.getListaProducto()) {					
@@ -17,7 +17,7 @@ public class Calculador<M extends Modificador> {
 		fac.setMontoTotal(total);		
 		return fac;
 	}
-
+	
 	public Factura<M> calcularDescuentoTotalPorProductos(Factura<M> fac) {
         float totalDescuento = 0;
         for (M modificador : fac.getListaModificadores()) {

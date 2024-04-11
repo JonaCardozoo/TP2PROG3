@@ -10,7 +10,7 @@ public class BillDiscount extends Modificador {
 		this.factura = factura;
 
 	}
-
+	
 	@Override
 	public double applayProductDiscount() {
 		return 0;
@@ -19,7 +19,7 @@ public class BillDiscount extends Modificador {
 	@Override
 	public double applayBillDiscount() {
 		double descuento = montoFijo;
-
+		
 		System.out.println("Descuento aplicado por " + getNombreDescuento() + ": " + descuento);
 
 		return descuento;

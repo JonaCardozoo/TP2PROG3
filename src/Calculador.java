@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Calculador<M extends Modificador> {
 
@@ -23,10 +24,11 @@ public class Calculador<M extends Modificador> {
         for (M modificador : fac.getListaModificadores()) {
             totalDescuento += modificador.applayProductDiscount();
         }
+        
         fac.setMontoTotal(fac.getMontoTotal() - totalDescuento);
         return fac;
     }
-
+	
     public Factura<M> calcularDescuentoTotalPorFactura(Factura<M> fac) {
         float totalDescuento = 0;
         for (M modificador : fac.getListaModificadores()) {
@@ -34,6 +36,15 @@ public class Calculador<M extends Modificador> {
         }
         fac.setMontoTotal(fac.getMontoTotal() - totalDescuento);
         return fac;
+    }
+    
+    public double calcularMontoTotales(List<ItemProducto> lista) {
+    	double total = 0;
+    	for(ItemProducto p : lista) {
+    		total += p.CalcularTotal();
+    	}
+    	
+    	return total;
     }
 
 }

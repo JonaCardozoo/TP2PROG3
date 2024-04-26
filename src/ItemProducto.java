@@ -11,17 +11,17 @@ public class ItemProducto {
 		this.precio = precio;
 		this.impuesto = impuesto;
 		this.cantidad = cantidad;
-
+		
 	}
 	
 	public float CalcularTotal() {
-
+		
 		float montoTotal = precio * cantidad;
 		float montoImpuesto = (montoTotal * impuesto);
 		float montoTotalFinal = montoTotal + montoImpuesto;
 		return montoTotalFinal;
 	}
-
+	
 	public String getNombre() {
 		return nombre;
 	}

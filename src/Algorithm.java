@@ -5,8 +5,7 @@ public final class Algorithm {
 	
 } 
 
-
-// Este codigo no funciona ya que esta queriendo devolver cual es el mayor, si x o y, pero no podemos comparar los tipos T 
-// ya que son genericos, lo que deberiamos hacer es usar un compareTo, que nos va permitir comparar los objetos entre si
+	
+// sisi, el codigo compila perfectamente
 
 

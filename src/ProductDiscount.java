@@ -18,12 +18,11 @@ public class ProductDiscount extends Modificador {
 	 @Override
 	    public double applayProductDiscount() {
 	        double descuento = refProducto.getPrecio() * refProducto.getCantidad() * getPorcentaje();
-	        System.out.println("Descuento aplicado por " + getNombreDescuento() + ": " + descuento);
 	        return descuento;
 	    }
+	 
 	@Override
 	public double applayBillDiscount() {
 		return 0;
 	}
-	
 }

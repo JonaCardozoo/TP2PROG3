@@ -26,4 +26,6 @@ public class Factura<T> {
 		return ListaProducto;
 	}
 	
+	
+	
 }

@@ -1,5 +1,5 @@
-// Sexoooooooooooooooooooooo
-//
+
+
 //public class Singleton<T> {
 //
 // public static T getInstance() {
@@ -12,4 +12,17 @@
 
 //El error que tiene es que declara el metodo getInstance como static como la variable de instancia, sacando el static y
 //casteando el Singleton, el metodo andaria
+
+
+
+//public class Singleton<T> {
+// private  T instance = null;
+// public  T getInstance() {
+// if (instance == null)
+// instance = (T) new Singleton<T>();
+// return instance;
+// }
+// 
+//}
+
 

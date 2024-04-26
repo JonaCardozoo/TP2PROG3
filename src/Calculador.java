@@ -13,7 +13,7 @@ public class Calculador<M extends Modificador> {
 	public Factura<M> calcularTotalFactura(Factura<M> fac) {
 		float total = 0.00f;		
 		for (ItemProducto item : fac.getListaProducto()) {					
-			total += item.CalcularTotal();
+			total += item.calcularTotal();
 		}		
 		fac.setMontoTotal(total);		
 		return fac;
@@ -32,16 +32,17 @@ public class Calculador<M extends Modificador> {
     public Factura<M> calcularDescuentoTotalPorFactura(Factura<M> fac) {
         float totalDescuento = 0;
         for (M modificador : fac.getListaModificadores()) {
-            totalDescuento += modificador.applayBillDiscount();
+            totalDescuento += modificador.applayBillDiscount();          
         }
         fac.setMontoTotal(fac.getMontoTotal() - totalDescuento);
+       
         return fac;
     }
     
     public double calcularMontoTotales(List<ItemProducto> lista) {
     	double total = 0;
     	for(ItemProducto p : lista) {
-    		total += p.CalcularTotal();
+    		total += p.calcularTotal();
     	}
     	
     	return total;

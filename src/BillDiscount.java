@@ -13,6 +13,7 @@ public class BillDiscount extends Modificador {
 	
 	@Override
 	public double applayProductDiscount() {
+		
 		return 0;
 	}
 
@@ -33,6 +34,7 @@ public class BillDiscount extends Modificador {
 //		}
 //		
 //		return totalConDescuento;
+		System.out.println(getNombreDescuento() + " monto fijo: " + (-montoFijo) + "\n");
 		
 		return (factura.getMontoTotal() * porcentaje) + montoFijo;
 	}

@@ -14,11 +14,11 @@ public class ItemProducto {
 		
 	}
 	
-	public float CalcularTotal() {
+	public float calcularTotal() {
 		
 		float montoTotal = precio * cantidad;
 		float montoImpuesto = (montoTotal * impuesto);
-		float montoTotalFinal = montoTotal + montoImpuesto;
+		float montoTotalFinal = montoTotal + montoImpuesto;	   
 		return montoTotalFinal;
 	}
 	
@@ -56,7 +56,7 @@ public class ItemProducto {
 
 	@Override
 	public String toString() {
-		return "ItemProducto [Nombre=" + this.nombre + ", Precio=" + this.precio + ", Impuesto=" + this.impuesto
-				+ ", Cantidad=" + this.cantidad + "]";
+		return "Producto\n" +"Nombre:" + this.nombre + ", Precio: $" + this.precio + ", Impuesto:" + this.impuesto
+				+ ", Cantidad:" + this.cantidad;
 	}
 }

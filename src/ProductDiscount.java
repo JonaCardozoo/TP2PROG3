@@ -17,7 +17,14 @@ public class ProductDiscount extends Modificador {
 	
 	 @Override
 	    public double applayProductDiscount() {
+		   
+		     double total = 0;
 	        double descuento = refProducto.getPrecio() * refProducto.getCantidad() * getPorcentaje();
+	        System.out.println(getRefProducto());
+	        System.out.println("Monto total sin descuento: $" +refProducto.calcularTotal());	     
+	        System.out.println("Descuento aplicado por " + getNombreDescuento() + ": $" + (-descuento ));
+	        total = refProducto.calcularTotal() - descuento;
+	        System.out.println("Total: " + total + "\n") ;
 	        return descuento;
 	    }
 	 
